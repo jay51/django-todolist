@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Spesific Todo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<h2>Get a spesific Todo</h2>
+
+		<ul>
+			<li>
+				{{ todo.Todo }} / <span>Done: {{ todo.done }}</span>
+			</li>
+			<small>{{ todo.summery }}</small>
+			<br />
+			<small>{{ todo.id }}</small>
+
+			<br />
+			<br />
+		</ul>
+
+		<form action="/todos/delete_todo/{{ todo.id }}/" method="POST">
+			{% csrf_token %} <input type="submit" value="Delete" />
+		</form>
+	</body>
+</html>
