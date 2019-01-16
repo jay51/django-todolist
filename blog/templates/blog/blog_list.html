@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Blogs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Blogs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
     <h1>Blogs</h1>
-    <h2>No blogs</h2>
+    {% if object_list %}
+    <!-- get object_list length -->
+    <h1>{{ object_list | length }}</h1>
+    {% else %}
+    <h1>No blogs</h1>
+    {% endif %}
 
+    <br />
 
-    {% for instance in object.id %}
-        <p>{{instance.id}}</p>
+    {% for instance in object_list %}
+    <p>{{ instance.title }}</p>
+    <small>{{ instance.contnet }}</small>
 
-      {% endfor %}
-
-</body>
+    {% endfor %}
+  </body>
 </html>
