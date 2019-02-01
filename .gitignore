@@ -1,12 +1,9 @@
 env
+.vscode
+.env
+db.sqlite3
 
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.vscode/
-
-nothing added to commit but untracked files present (use "git add" to track)
+todos/migrations/0002_auto_20190201_0424.py
+todos/migrations/0003_auto_20190201_0733.py
+todos/migrations/__pycache__/0002_auto_20190201_0424.cpython-36.pyc
+todos/migrations/__pycache__/0003_auto_20190201_0733.cpython-36.pyc
