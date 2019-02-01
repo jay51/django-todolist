@@ -2,21 +2,24 @@
 from django import forms
 import datetime
 
-from .models import Todos
+from .models import Todo
 
 # Form class describes a form and determines how it works and appears same way that.
 # Django model describes the logical structure of an object, its behavior, and the way its parts are represented to us
 
 
 class AddTodo(forms.ModelForm):
-
     class Meta:
-        model = Todos
+        model = Todo
         fields = [
-            "Todo",
+            "todo",
             "summery",
             "done"
         ]
+        # for styling the form
+        widgets = {
+            "todo": forms.TextInput(attrs={"class": "validate"}),
+        }
 
     # if label omitted Django would use the name of filed as label
     # todo = forms.CharField(label="Todo", max_length=180)

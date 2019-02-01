@@ -18,13 +18,8 @@ from django.urls import path, include
 from django.http import HttpResponse
 
 
-def home(request):
-    return HttpResponse("Home page")
-
-
 urlpatterns = [
-    path('', home),
+    path('', include("todos.urls")),
     path('todos/', include("todos.urls")),
-    path('blog/', include("blog.urls")),
     path('admin/', admin.site.urls),
 ]

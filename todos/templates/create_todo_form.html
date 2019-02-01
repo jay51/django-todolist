@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Create Todo</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	</head>
-	<body>
-		<h2>Create Todo</h2>
+{% extends "layout.html" %} {% block content %}
+<h2>Create Todo</h2>
 
-		<form action="/todos/create_todo/" method="post">
-			{% csrf_token %} {{ form.as_ul }} <input type="submit" value="Submit" />
-		</form>
-	</body>
-</html>
+<form action="/todos/create_todo/" method="post">
+	{% csrf_token %} {{ form.as_ul }} <input type="submit" value="Submit" />
+</form>
+
+{% endblock content %}

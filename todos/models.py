@@ -3,8 +3,8 @@ from django.urls import reverse
 
 
 # Create your models here.
-class Todos(models.Model):
-    Todo = models.CharField(max_length=120)
+class Todo(models.Model):
+    todo = models.CharField(max_length=120)
     summery = models.TextField(blank=True, null=True)
     done = models.BooleanField(default=False)
 
