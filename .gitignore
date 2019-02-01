@@ -2,3 +2,8 @@ env
 .vscode
 .env
 db.sqlite3
+
+todos/migrations/0002_auto_20190201_0424.py
+todos/migrations/0003_auto_20190201_0733.py
+todos/migrations/__pycache__/0002_auto_20190201_0424.cpython-36.pyc
+todos/migrations/__pycache__/0003_auto_20190201_0733.cpython-36.pyc
