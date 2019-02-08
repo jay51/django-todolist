@@ -1,8 +1,0 @@
-{% extends "layout.html" %} {% block content %}
-<h2>Create Todo</h2>
-
-<form action="/todos/create_todo/" method="post">
-	{% csrf_token %} {{ form.as_ul }} <input type="submit" value="Submit" />
-</form>
-
-{% endblock content %}
