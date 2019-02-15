@@ -18,7 +18,9 @@ from django.urls import path
 from . import views
 # from .views import index_page
 
+
 urlpatterns = [
     path('', views.index_page),
+    path('signup/', views.signup),
     path('admin/', admin.site.urls),
 ]
