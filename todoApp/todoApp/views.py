@@ -1,3 +1,4 @@
+from django.contrib.auth import logout, login
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -7,24 +8,27 @@ from django.http import HttpResponse
 # For authenticating users
 from django.contrib.auth import authenticate
 
-# def my_view(request):
-#     username = request.POST['username']
-#     password = request.POST['password']
-#     user = authenticate(request, username=username, password=password)
-#     if user is not None:
-#         login(request, user)
-#         # Redirect to a success page.
-#         ...
-#     else:
-#         # Return an 'invalid login' error message.
+
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            return redirect("/")
+
+        return HttpResponse("Wrogn email or password")
+
+    # Return an 'invalid login' error message.
+    return render(request, "todoApp/login.html")
+
 
 # if request.user.is_authenticated:
 #     # Do something for authenticated users.
 # else:
 #     # Do something for anonymous users.
-
-
-from django.contrib.auth import logout, login
 
 
 def logout_view(request):
