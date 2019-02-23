@@ -1,8 +1,12 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
+
+
 # Auth
 # For authenticating users
-
 from django.contrib.auth import authenticate
+
 # def my_view(request):
 #     username = request.POST['username']
 #     password = request.POST['password']
@@ -22,17 +26,18 @@ from django.contrib.auth import authenticate
 
 from django.contrib.auth import logout, login
 
-# def logout_view(request):
-#     logout(request)
+
+def logout_view(request):
+    logout(request)
+    return redirect("/")
 #     # Redirect to a success page.
 
 
-from django.contrib.auth.forms import UserCreationForm
-
-
 def signup(request):
-    # Note:
-    # Make you pass the form a long name and a valid long password for form to submit
+    if request.user.is_authenticated:
+        return HttpResponse("your loged in ")
+        # Note:
+        # pass the form a long name and a valid long password for form to submit
     if request.method == "POST":
         # SIGNUP user
         form = UserCreationForm(request.POST)
